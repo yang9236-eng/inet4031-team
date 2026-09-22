@@ -1,0 +1,8 @@
+---
+- name: Configure application stack
+  hosts: localhost
+  connection: local
+  become: false
+
+  roles:
+    - app-stack

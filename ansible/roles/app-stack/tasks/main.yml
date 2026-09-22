@@ -1,0 +1,6 @@
+---
+- name: Start application stack
+  community.docker.docker_compose_v2:
+    project_src: "{{ playbook_dir }}/../week-2"
+    state: present
+    build: always
