@@ -1,8 +1,17 @@
 ---
-- name: Configure application stack
+- name: Configure k3d cluster
   hosts: localhost
   connection: local
   become: false
 
   roles:
-    - app-stack
+    - k3d-setup
+
+# Week 2 Docker Compose play, retained for reference:
+# - name: Configure application stack
+#   hosts: localhost
+#   connection: local
+#   become: false
+#
+#   roles:
+#     - app-stack

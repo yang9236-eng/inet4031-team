@@ -1,0 +1,35 @@
+---
+- name: Create local binary directory
+  ansible.builtin.file:
+    path: "{{ ansible_facts['env']['HOME'] }}/.local/bin"
+    state: directory
+    mode: '0755'
+
+- name: Install k3d for the current user
+  ansible.builtin.get_url:
+    url: https://github.com/k3d-io/k3d/releases/download/v5.9.0/k3d-linux-amd64
+    dest: "{{ ansible_facts['env']['HOME'] }}/.local/bin/k3d"
+    mode: '0755'
+    checksum: sha256:06d8f25bc3a971c4eb29e0ff08429b180402db0f4dec838c9eac427e296800a0
+
+- name: List k3d clusters
+  ansible.builtin.command: "{{ ansible_facts['env']['HOME'] }}/.local/bin/k3d cluster list"
+  register: k3d_clusters
+  changed_when: false
+
+- name: Create myapp cluster
+  ansible.builtin.command:
+    argv:
+      - "{{ ansible_facts['env']['HOME'] }}/.local/bin/k3d"
+      - cluster
+      - create
+      - myapp
+      - --servers
+      - '1'
+      - --agents
+      - '2'
+      - --port
+      - 8081:80@loadbalancer
+      - --k3s-arg
+      - --disable=traefik@server:0
+  when: k3d_clusters.stdout is not regex('(?m)^myapp\s')

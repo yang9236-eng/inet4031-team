@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f ../week-2/docker-compose.yml
+    kompose.version: 1.38.0 (a8f5d1cbd)
+  labels:
+    app: flask
+  name: flask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f ../week-2/docker-compose.yml
+        kompose.version: 1.38.0 (a8f5d1cbd)
+      labels:
+        app: flask
+    spec:
+      containers:
+        - envFrom:
+            - secretRef:
+                name: flask-credentials
+          image: incident-flask:week3
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            exec:
+              command:
+                - curl
+                - -f
+                - http://localhost:5000/health
+            failureThreshold: 5
+            periodSeconds: 5
+            timeoutSeconds: 5
+          name: flask
+          ports:
+            - containerPort: 5000
+              protocol: TCP
+      restartPolicy: Always
