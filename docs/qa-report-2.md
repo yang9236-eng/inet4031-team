@@ -132,15 +132,15 @@ Review the criteria below for each part of this week's deliverables. For each cr
 
 ### Required Files
 
-TODO: [ ] `manifests/` directory is committed with all Kubernetes manifests (Deployments, Services, Secrets, PVC, ConfigMap)
-TODO: [ ] `manifests/flask-secret.yaml` and `manifests/db-secret.yaml` are committed
-TODO: [ ] `ansible/site.yml` includes the k3d-setup play (and has `app-stack` commented out)
-TODO: [ ] `ansible/roles/k3d-setup/tasks/main.yml` is committed
-TODO: [ ] `week-2/docker-compose.yml` is committed with the `ports:` entries added for `db` and `flask`
+[x] `manifests/` directory is committed with all Kubernetes manifests (Deployments, Services, Secrets, PVC, ConfigMap)
+[x] `manifests/flask-secret.yaml` and `manifests/db-secret.yaml` are committed
+[x] `ansible/site.yml` includes the k3d-setup play (and has `app-stack` commented out)
+[x] `ansible/roles/k3d-setup/tasks/main.yml` is committed
+[x] `week-2/docker-compose.yml` is committed with the `ports:` entries added for `db` and `flask`
 
 ### GitHub Repository
 
-TODO: [ ] All changes are pushed to the main branch
+[x] All changes are pushed to the main branch
 TODO: [ ] GitHub Project board shows all Week 3 tasks completed
 
 ### Google Doc
