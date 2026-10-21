@@ -6,7 +6,7 @@ prometheus-pushgateway:
   enabled: false
 
 server:
-  retention: 3d
+  retention: 2d
   persistentVolume:
     enabled: false
   resources:
