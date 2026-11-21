@@ -1,0 +1,19 @@
+NAME        ADDRESSTYPE   PORTS   ENDPOINTS     AGE
+web-zggll   IPv4          5000    10.42.0.104   44d
+NAME       ADDRESSTYPE   PORTS   ENDPOINTS     AGE
+db-fq6hk   IPv4          5432    10.42.0.100   44d
+Name:         db-clients
+Namespace:    default
+Created on:   2026-11-04 23:19:08 +0000 UTC
+Labels:       <none>
+Annotations:  <none>
+Spec:
+  PodSelector:     app=db
+  Allowing ingress traffic:
+    To Port: 5432/TCP
+    From:
+      PodSelector: app=web
+    From:
+      PodSelector: app=db-exporter
+  Not affecting egress traffic
+  Policy Types: Ingress

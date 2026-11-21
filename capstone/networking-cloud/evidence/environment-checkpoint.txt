@@ -1,0 +1,35 @@
+NAME    STATUS   ROLES           AGE   VERSION        INTERNAL-IP   EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION             CONTAINER-RUNTIME
+roony   Ready    control-plane   49d   v1.36.5+k3s1   10.0.2.15     <none>        Ubuntu 26.04.1 LTS   7.0.0-38-generic (amd64)   containerd://2.3.4-k3s1.36
+NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/db            1/1     1            1           44d
+deployment.apps/db-exporter   1/1     1            1           16d
+deployment.apps/web           1/1     1            1           44d
+
+NAME                  TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+service/db            ClusterIP   10.43.157.126   <none>        5432/TCP   44d
+service/db-exporter   ClusterIP   10.43.200.89    <none>        9187/TCP   16d
+service/kubernetes    ClusterIP   10.43.0.1       <none>        443/TCP    49d
+service/web           ClusterIP   10.43.229.24    <none>        8080/TCP   44d
+
+NAME                               READY   STATUS    RESTARTS      AGE
+pod/db-68dc786d-6n2xn              1/1     Running   1 (91s ago)   9d
+pod/db-exporter-5bd684db7b-6872b   1/1     Running   2 (91s ago)   16d
+pod/web-7b876d4578-6cmsp           1/1     Running   2 (78s ago)   9d
+NAME                           READY   STATUS    RESTARTS      AGE   IP            NODE    NOMINATED NODE   READINESS GATES
+db-68dc786d-6n2xn              1/1     Running   1 (91s ago)   9d    10.42.0.100   roony   <none>           <none>
+db-exporter-5bd684db7b-6872b   1/1     Running   2 (91s ago)   16d   10.42.0.102   roony   <none>           <none>
+web-7b876d4578-6cmsp           1/1     Running   2 (78s ago)   9d    10.42.0.104   roony   <none>           <none>
+NAME         POD-SELECTOR   AGE
+db-clients   app=db         16d
+NAME                                             READY   STATUS    RESTARTS      AGE
+prometheus-kube-state-metrics-86f6b846bf-ppzzr   1/1     Running   6 (91s ago)   36d
+prometheus-prometheus-node-exporter-6cb9d        1/1     Running   6 (91s ago)   36d
+prometheus-server-6944b769c9-xdjdw               2/2     Running   8 (91s ago)   30d
+Health check HTTP 200
+NAME    CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+roony   93m          4%       2571Mi          75%         
+For more information on running Prometheus, visit:
+https://prometheus.io/
+2026-11-12 00:24:14 deployed 403f06f
+2026-11-12 00:26:01 up to date at 403f06f
+2026-11-21 18:16:02 up to date at 403f06f
