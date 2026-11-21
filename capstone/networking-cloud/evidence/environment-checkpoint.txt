@@ -26,8 +26,8 @@ prometheus-kube-state-metrics-86f6b846bf-ppzzr   1/1     Running   6 (91s ago)  
 prometheus-prometheus-node-exporter-6cb9d        1/1     Running   6 (91s ago)   36d
 prometheus-server-6944b769c9-xdjdw               2/2     Running   8 (91s ago)   30d
 Health check HTTP 200
-NAME    CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
-roony   93m          4%       2571Mi          75%         
+NAME    CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)
+roony   93m          4%       2571Mi          75%
 For more information on running Prometheus, visit:
 https://prometheus.io/
 2026-11-12 00:24:14 deployed 403f06f

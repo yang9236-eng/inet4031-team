@@ -1,6 +1,6 @@
 
 
-  █ THRESHOLDS 
+  █ THRESHOLDS
 
     http_req_duration
     ✓ 'p(95)<500' p(95)=19.85ms
@@ -9,7 +9,7 @@
     ✓ 'rate<0.01' rate=0.00%
 
 
-  █ TOTAL RESULTS 
+  █ TOTAL RESULTS
 
     checks_total.......: 2170    18.074916/s
     checks_succeeded...: 100.00% 2170 out of 2170
@@ -18,8 +18,8 @@
     ✓ status is 200
 
     HTTP
-    http_req_duration..............: avg=11.66ms  min=6.76ms  med=9.65ms   max=114.56ms p(90)=16.36ms  p(95)=19.85ms 
-      { expected_response:true }...: avg=11.66ms  min=6.76ms  med=9.65ms   max=114.56ms p(90)=16.36ms  p(95)=19.85ms 
+    http_req_duration..............: avg=11.66ms  min=6.76ms  med=9.65ms   max=114.56ms p(90)=16.36ms  p(95)=19.85ms
+      { expected_response:true }...: avg=11.66ms  min=6.76ms  med=9.65ms   max=114.56ms p(90)=16.36ms  p(95)=19.85ms
     http_req_failed................: 0.00%  0 out of 2170
     http_reqs......................: 2170   18.074916/s
 

@@ -1,12 +1,12 @@
 2026-11-21T18:17:52+00:00
 NAME   READY   UP-TO-DATE   AVAILABLE   AGE
 web    1/1     1            1           44d
-NAME                           CPU(cores)   MEMORY(bytes)   
-db-68dc786d-6n2xn              7m           84Mi            
-db-exporter-5bd684db7b-6872b   1m           23Mi            
-web-7b876d4578-6cmsp           6m           23Mi            
-NAME    CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
-roony   115m         5%       2637Mi          77%         
+NAME                           CPU(cores)   MEMORY(bytes)
+db-68dc786d-6n2xn              7m           84Mi
+db-exporter-5bd684db7b-6872b   1m           23Mi
+web-7b876d4578-6cmsp           6m           23Mi
+NAME    CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)
+roony   115m         5%       2637Mi          77%
                total        used        free      shared  buff/cache   available
 Mem:           3.3Gi       1.3Gi       346Mi        19Mi       1.9Gi       2.0Gi
 Swap:          3.8Gi          0B       3.8Gi
